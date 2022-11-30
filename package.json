@@ -1,0 +1,19 @@
+{
+  "name": "make-deps-exact",
+  "version": "1.0.0",
+  "description": "Remove version range from package.json",
+  "type": "module",
+  "bin": "dep.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Daniel Perez Alvarez",
+    "email": "danielpza@protonmail.com",
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.9"
+  }
+}
