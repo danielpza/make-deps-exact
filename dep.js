@@ -31,7 +31,6 @@ for (const mode of modes) {
     /** @type {string} */
     const actual = pkgLock.dependencies[key].version;
     if (skipGit && actual.startsWith("git+ssh://")) continue;
-    console.log(actual);
     if (version !== actual) {
       console.log(`changing ${key} from ${version} to ${actual}`);
       pkg[mode][key] = actual;
