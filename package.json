@@ -12,7 +12,7 @@
     "name": "Daniel Perez Alvarez",
     "email": "danielpza@protonmail.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.11.9"
   }
