@@ -6,7 +6,7 @@ import { parseArgs } from "node:util";
 const pkg = JSON.parse(await readFile("package.json", "utf8"));
 const pkgLock = JSON.parse(await readFile("package-lock.json", "utf8"));
 
-const { values, positionals } = parseArgs({
+const { values } = parseArgs({
   args: process.argv.slice(2),
   options: {
     "skip-git": {
