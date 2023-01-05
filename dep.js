@@ -19,15 +19,19 @@ const { values, positionals } = parseArgs({
   },
 });
 
-const { dry } = values;
+const { ["skip-git"]: skipGit, dry } = values;
 
 const modes = ["dependencies", "devDependencies", "optionalDependencies"];
 
 for (const mode of modes) {
   if (!pkg[mode]) continue;
   for (const key in pkg[mode]) {
+    /** @type {string} */
     const version = pkg[mode][key];
+    /** @type {string} */
     const actual = pkgLock.dependencies[key].version;
+    if (skipGit && actual.startsWith("git+ssh://")) continue;
+    console.log(actual);
     if (version !== actual) {
       console.log(`changing ${key} from ${version} to ${actual}`);
       pkg[mode][key] = actual;
