@@ -1,4 +1,4 @@
-# make-deps-exact
+# make-deps-exact ![npm](https://img.shields.io/npm/v/make-deps-exact)
 
 Removes version range from package.json
 
