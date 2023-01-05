@@ -5,6 +5,7 @@
   "type": "module",
   "bin": "dep.js",
   "scripts": {
+    "release": "commit-and-tag-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +15,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.11.9"
+    "@types/node": "^18.11.9",
+    "commit-and-tag-version": "^10.1.0"
   }
 }
