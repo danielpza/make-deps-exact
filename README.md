@@ -6,16 +6,19 @@ Currently it only supports reading from package-lock.json file to replace the pa
 
 ## Installation
 
-``` shell
-# available from github source https://github.com/danielpza/make-deps-exact
-npm install --global danielpza/make-deps-exact
+```shell
+npm install make-deps-exact
 ```
-
 
 ## Usage
 
-``` shell
+```shell
 cd go-to-npm-project
 make-deps-exact
-```
 
+# display changes but doesn't write to package.json
+make-deps-exact --dry
+
+# skip git+ssh protocol
+make-deps-exact --skip-git
+```
