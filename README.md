@@ -22,3 +22,7 @@ make-deps-exact --dry
 # skip git+ssh protocol
 make-deps-exact --skip-git
 ```
+
+## Contributing
+
+We follow the [conventional commits specs](https://www.conventionalcommits.org/en/v1.0.0/).
