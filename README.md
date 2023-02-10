@@ -12,15 +12,13 @@ npm install make-deps-exact
 
 ## Usage
 
+Uses current working directory's package.json and package-lock.json
+
 ```shell
-cd go-to-npm-project
-make-deps-exact
-
-# display changes but doesn't write to package.json
-make-deps-exact --dry
-
-# skip git+ssh protocol
-make-deps-exact --skip-git
+make-deps-exact [...opts]
+  --skip-git    skip git+ssh protocol
+  --dry         do not write to package.json
+  --help        show help message
 ```
 
 ## Contributing
