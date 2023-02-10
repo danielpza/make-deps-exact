@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.1.1](///compare/v0.1.0...v0.1.1) (2023-02-10)
+
+
+### Features
+
+* add help command b9e9a64
+
+
+### Bug Fixes
+
+* remove extra console.log b932193
+
 ## 0.1.0 (2023-01-05)
 
 
