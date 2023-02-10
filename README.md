@@ -24,3 +24,11 @@ make-deps-exact [...opts]
 ## Contributing
 
 We follow the [conventional commits specs](https://www.conventionalcommits.org/en/v1.0.0/).
+
+### Publishing new changes
+
+```shell
+npm run release
+git push origin master --follow-tags
+npm publish
+```
