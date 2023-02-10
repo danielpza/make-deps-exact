@@ -6,6 +6,13 @@ import { parseArgs } from "node:util";
 const pkg = JSON.parse(await readFile("package.json", "utf8"));
 const pkgLock = JSON.parse(await readFile("package-lock.json", "utf8"));
 
+const HELP = `\
+make-deps-exact [...opts]
+  --skip-git    skip git+ssh protocol
+  --dry         do not write to package.json
+  --help        show help message
+`;
+
 const { values } = parseArgs({
   args: process.argv.slice(2),
   options: {
@@ -16,10 +23,19 @@ const { values } = parseArgs({
       type: "boolean",
       short: "d",
     },
+    help: {
+      type: "boolean",
+      short: "h",
+    },
   },
 });
 
-const { ["skip-git"]: skipGit, dry } = values;
+const { ["skip-git"]: skipGit, dry, help } = values;
+
+if (help) {
+  console.log(HELP);
+  process.exit(0);
+}
 
 const modes = ["dependencies", "devDependencies", "optionalDependencies"];
 
