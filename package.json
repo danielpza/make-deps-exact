@@ -3,19 +3,33 @@
   "version": "0.1.1",
   "description": "Remove version range from package.json",
   "type": "module",
-  "bin": "dep.js",
+  "bin": {
+    "make-deps-exact": "dep.js"
+  },
   "scripts": {
     "release": "commit-and-tag-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": {
-    "name": "Daniel Perez Alvarez",
-    "email": "danielpza@protonmail.com"
-  },
+  "keywords": [
+    "remove",
+    "dependencies",
+    "version",
+    "range",
+    "package-lock.json",
+    "package.json"
+  ],
+  "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.11.9",
     "commit-and-tag-version": "^10.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpza/make-deps-exact.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielpza/make-deps-exact/issues"
+  },
+  "homepage": "https://github.com/danielpza/make-deps-exact#readme"
 }
