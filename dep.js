@@ -66,4 +66,5 @@ for (const mode of modes) {
   }
 }
 
-if (!dry) await writeFile("package.json", JSON.stringify(pkg, null, indent));
+if (!dry)
+  await writeFile("package.json", JSON.stringify(pkg, null, indent) + "\n");
