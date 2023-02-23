@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.1.3](https://github.com/danielpza/make-deps-exact/compare/v0.1.2...v0.1.3) (2023-02-23)
+
+
+### Features
+
+* add --quiet option ([7168555](https://github.com/danielpza/make-deps-exact/commit/71685551dd52bd7d691bd05c73545a737d3212c0))
+
 ### [0.1.2](https://github.com/danielpza/make-deps-exact/compare/v0.1.1...v0.1.2) (2023-02-10)
 
 ### [0.1.1](///compare/v0.1.0...v0.1.1) (2023-02-10)

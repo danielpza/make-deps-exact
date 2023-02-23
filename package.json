@@ -1,6 +1,6 @@
 {
   "name": "make-deps-exact",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Remove version range from package.json",
   "type": "module",
   "bin": {
