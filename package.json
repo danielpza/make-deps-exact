@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/danielpza/make-deps-exact/issues"
   },
-  "homepage": "https://github.com/danielpza/make-deps-exact#readme"
+  "homepage": "https://github.com/danielpza/make-deps-exact#readme",
+  "dependencies": {
+    "detect-indent": "^7.0.1"
+  }
 }

@@ -3,8 +3,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
 
-const pkg = JSON.parse(await readFile("package.json", "utf8"));
-const pkgLock = JSON.parse(await readFile("package-lock.json", "utf8"));
+import detectIndent from "detect-indent";
 
 const HELP = `\
 make-deps-exact [...opts]
@@ -42,6 +41,14 @@ if (help) {
   process.exit(0);
 }
 
+const pkgFile = await readFile("package.json", "utf8");
+const pkgLockFile = await readFile("package-lock.json", "utf8");
+
+const pkg = JSON.parse(pkgFile);
+const pkgLock = JSON.parse(pkgLockFile);
+
+const indent = detectIndent(pkgFile).indent ?? 2;
+
 const modes = ["dependencies", "devDependencies", "optionalDependencies"];
 
 for (const mode of modes) {
@@ -59,4 +66,4 @@ for (const mode of modes) {
   }
 }
 
-if (!dry) await writeFile("package.json", JSON.stringify(pkg, null, 2));
+if (!dry) await writeFile("package.json", JSON.stringify(pkg, null, indent));
