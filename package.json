@@ -21,8 +21,8 @@
   "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.11.9",
-    "commit-and-tag-version": "^10.1.0"
+    "@types/node": "^18.14.1",
+    "commit-and-tag-version": "^11.1.0"
   },
   "repository": {
     "type": "git",
