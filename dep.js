@@ -9,8 +9,9 @@ const pkgLock = JSON.parse(await readFile("package-lock.json", "utf8"));
 const HELP = `\
 make-deps-exact [...opts]
   --skip-git    skip git+ssh protocol
-  --dry         do not write to package.json
-  --help        show help message
+  -d,--dry      do not write to package.json
+  -q,--quiet    do not output changes to console
+  -h,--help     show help message
 `;
 
 const { values } = parseArgs({
@@ -23,6 +24,10 @@ const { values } = parseArgs({
       type: "boolean",
       short: "d",
     },
+    quiet: {
+      type: "boolean",
+      short: "q",
+    },
     help: {
       type: "boolean",
       short: "h",
@@ -30,7 +35,7 @@ const { values } = parseArgs({
   },
 });
 
-const { ["skip-git"]: skipGit, dry, help } = values;
+const { ["skip-git"]: skipGit, dry, help, quiet } = values;
 
 if (help) {
   console.log(HELP);
@@ -48,7 +53,7 @@ for (const mode of modes) {
     const actual = pkgLock.dependencies[key].version;
     if (skipGit && actual.startsWith("git+ssh://")) continue;
     if (version !== actual) {
-      console.log(`changing ${key} from ${version} to ${actual}`);
+      if (!quiet) console.log(`changing ${key} from ${version} to ${actual}`);
       pkg[mode][key] = actual;
     }
   }
