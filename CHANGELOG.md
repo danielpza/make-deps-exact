@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.5](https://github.com/danielpza/make-deps-exact/compare/v0.1.4...v0.1.5) (2023-03-15)
+
+
+### Features
+
+* allow updating only user specified packages with minimatch ([4aabc49](https://github.com/danielpza/make-deps-exact/commit/4aabc496c724c5e9936f9c573af31f7e23af7699))
+
 ## [0.1.4](https://github.com/danielpza/make-deps-exact/compare/v0.1.3...v0.1.4) (2023-02-23)
 
 
