@@ -15,11 +15,17 @@ npm install make-deps-exact
 Uses current working directory's package.json and package-lock.json
 
 ```
-make-deps-exact [...opts]
+make-deps-exact [...opts] [...patterns]
   --skip-git    skip git+ssh protocol
   -d,--dry      do not write to package.json
   -q,--quiet    do not output changes to console
   -h,--help     show help message
+```
+
+Pass a list of expressions if you want to only remove the semver from certain packages and not every package:
+
+```
+make-deps-exact eslint* typescript
 ```
 
 ## Contributing

@@ -22,12 +22,15 @@
   "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
   "type": "module",
   "bin": "dep.js",
+  "files": [
+    "dep.js"
+  ],
   "scripts": {
-    "release": "commit-and-tag-version",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "commit-and-tag-version"
   },
   "dependencies": {
-    "detect-indent": "^7.0.1"
+    "detect-indent": "^7.0.1",
+    "multimatch": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.14.1",

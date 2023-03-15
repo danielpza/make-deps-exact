@@ -4,17 +4,19 @@ import { readFile, writeFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
 
 import detectIndent from "detect-indent";
+import multimatch from "multimatch";
 
 const HELP = `\
-make-deps-exact [...opts]
+make-deps-exact [...opts] [...patterns]
   --skip-git    skip git+ssh protocol
   -d,--dry      do not write to package.json
   -q,--quiet    do not output changes to console
   -h,--help     show help message
 `;
 
-const { values } = parseArgs({
+const { values, positionals: matchExprs } = parseArgs({
   args: process.argv.slice(2),
+  allowPositionals: true,
   options: {
     "skip-git": {
       type: "boolean",
@@ -35,6 +37,8 @@ const { values } = parseArgs({
 });
 
 const { ["skip-git"]: skipGit, dry, help, quiet } = values;
+
+const shouldChangeAllDeps = matchExprs.length === 0;
 
 if (help) {
   console.log(HELP);
@@ -58,7 +62,12 @@ for (const mode of modes) {
     const version = pkg[mode][key];
     /** @type {string} */
     const actual = pkgLock.dependencies[key].version;
+
     if (skipGit && actual.startsWith("git+ssh://")) continue;
+
+    if (!shouldChangeAllDeps && multimatch([key], matchExprs).length === 0)
+      continue;
+
     if (version !== actual) {
       if (!quiet) console.log(`changing ${key} from ${version} to ${actual}`);
       pkg[mode][key] = actual;
