@@ -2,14 +2,6 @@
   "name": "make-deps-exact",
   "version": "0.1.4",
   "description": "Remove version range from package.json",
-  "type": "module",
-  "bin": {
-    "make-deps-exact": "dep.js"
-  },
-  "scripts": {
-    "release": "commit-and-tag-version",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "remove",
     "dependencies",
@@ -18,21 +10,28 @@
     "package-lock.json",
     "package.json"
   ],
-  "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^18.14.1",
-    "commit-and-tag-version": "^11.1.0"
+  "homepage": "https://github.com/danielpza/make-deps-exact#readme",
+  "bugs": {
+    "url": "https://github.com/danielpza/make-deps-exact/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danielpza/make-deps-exact.git"
   },
-  "bugs": {
-    "url": "https://github.com/danielpza/make-deps-exact/issues"
+  "license": "MIT",
+  "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
+  "type": "module",
+  "bin": "dep.js",
+  "scripts": {
+    "release": "commit-and-tag-version",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/danielpza/make-deps-exact#readme",
   "dependencies": {
     "detect-indent": "^7.0.1"
-  }
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.1",
+    "commit-and-tag-version": "^11.1.0"
+  },
+  "packageManager": "yarn@3.4.1"
 }
